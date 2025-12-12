@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahima Das | Portfolio</title>
+    <title>Mahima Das | Psychological Researcher</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mahimadas27/mahimadas27.github.io/refs/heads/main/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-ocean-pink: #ff9ecf;
             --color-ocean-pink-dark: #f284bd;
-            --color-text: #333333;
-            --color-text-light: #666666;
+            --color-text: #1a1a1a;
+            --color-text-light: #4a4a4a;
             --color-bg-light: #f8f9fa;
             --color-border: #eaeaea;
             --color-white: #ffffff;
+            --color-accent: #6c63ff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
         * {
@@ -24,124 +27,120 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             color: var(--color-text);
-            line-height: 1.6;
+            line-height: 1.7;
             background-color: var(--color-white);
             display: flex;
             min-height: 100vh;
+            font-size: 18px;
         }
 
-        /* ===== SIDEBAR STYLES ===== */
+        /* ===== SIDEBAR - SIMPLIFIED ===== */
         .sidebar {
             width: 320px;
-            background: var(--color-white);
-            padding: 40px 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #fcfcfc 100%);
+            padding: 50px 35px;
             position: fixed;
             left: 0;
             top: 0;
             height: 100vh;
             overflow-y: auto;
             border-right: 1px solid var(--color-border);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
             z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .profile-img-container {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--color-white);
-            box-shadow: 0 0 0 4px var(--color-ocean-pink),
-                        0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 8px solid var(--color-white);
+            box-shadow: 
+                0 0 0 6px var(--color-ocean-pink),
+                0 15px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
         }
 
         .name-title h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
             color: var(--color-text);
+            letter-spacing: -0.5px;
         }
 
         .name-title p {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--color-text-light);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 40px;
+            font-weight: 500;
+            line-height: 1.5;
         }
 
         .sidebar-section {
-            margin-bottom: 30px;
+            width: 100%;
+            margin-bottom: 35px;
         }
 
         .sidebar-section h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--color-text);
-            border-bottom: 2px solid var(--color-ocean-pink);
-            padding-bottom: 5px;
-        }
-
-        .interests-list {
-            list-style: none;
-        }
-
-        .interests-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .interests-list li:before {
-            content: "•";
-            color: var(--color-ocean-pink);
             font-size: 20px;
-            position: absolute;
-            left: 0;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-text);
+            text-align: center;
         }
 
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .contact-link {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
             text-decoration: none;
             font-weight: 600;
-            padding: 14px 18px;
-            border-radius: 10px;
+            padding: 16px 24px;
+            border-radius: 12px;
             background: var(--color-white);
-            border: 2px solid var(--color-ocean-pink);
+            border: 3px solid var(--color-ocean-pink);
             color: var(--color-text);
-            transition: all 0.3s ease;
-            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 16px;
+            text-align: center;
         }
 
         .contact-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(255, 158, 207, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 158, 207, 0.35);
             background-color: var(--color-ocean-pink);
             color: var(--color-white);
         }
 
         .contact-link i {
-            font-size: 18px;
+            font-size: 20px;
             width: 24px;
-            text-align: center;
         }
 
         .contact-link.linkedin { border-color: #0A66C2; }
@@ -153,44 +152,47 @@
         .contact-link.topmate { border-color: #6c5ce7; }
         .contact-link.topmate:hover { background-color: #6c5ce7; }
 
-        /* ===== MAIN CONTENT STYLES ===== */
+        /* ===== MAIN CONTENT ===== */
         .main-content {
             flex: 1;
             margin-left: 320px;
-            padding: 0;
             min-height: 100vh;
             background-color: var(--color-white);
         }
 
-        /* Header with Tabs */
+        /* Spaced Out Header Tabs */
         .header-tabs {
             position: sticky;
             top: 0;
             z-index: 90;
             background: var(--color-white);
             border-bottom: 1px solid var(--color-border);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            padding: 0 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 0 60px;
         }
 
         .nav-tabs {
             display: flex;
             list-style: none;
+            justify-content: flex-start;
+            max-width: 1200px;
         }
 
         .nav-tabs li {
-            margin-right: 10px;
+            margin-right: 40px;
         }
 
         .tab-link {
             display: inline-block;
-            padding: 20px 24px;
+            padding: 25px 8px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-text-light);
-            border-bottom: 3px solid transparent;
+            border-bottom: 4px solid transparent;
             transition: all 0.3s ease;
-            font-size: 16px;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+            position: relative;
         }
 
         .tab-link:hover {
@@ -199,18 +201,18 @@
 
         .tab-link.active {
             color: var(--color-ocean-pink);
-            border-bottom: 3px solid var(--color-ocean-pink);
+            border-bottom: 4px solid var(--color-ocean-pink);
         }
 
         /* Tab Content */
         .tab-content {
-            padding: 40px;
-            max-width: 900px;
+            padding: 60px;
+            max-width: 1200px;
         }
 
         .tab-pane {
             display: none;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.6s ease;
         }
 
         .tab-pane.active {
@@ -218,67 +220,155 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .tab-pane h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        /* Home Tab - LARGE FONT CONTENT */
+        .home-intro {
+            margin-bottom: 60px;
+        }
+
+        .home-intro h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--color-text);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .home-intro p {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        /* About Me Section */
+        .about-section {
+            background: linear-gradient(135deg, #fdf2ff 0%, #f0f7ff 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+            border-left: 6px solid var(--color-ocean-pink);
+            box-shadow: var(--shadow);
+        }
+
+        .about-section h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 25px;
             color: var(--color-text);
         }
 
-        .tab-pane p {
-            font-size: 17px;
-            margin-bottom: 20px;
-            color: var(--color-text-light);
+        .about-section p {
+            font-size: 20px;
             line-height: 1.7;
+            color: var(--color-text-light);
+            margin-bottom: 20px;
         }
 
-        /* Home Tab Specific */
-        .home-intro {
-            margin-bottom: 40px;
+        /* Research Focus Section */
+        .research-section {
+            margin: 70px 0;
         }
 
+        .research-section h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 35px;
+            color: var(--color-text);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .research-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            padding: 35px 30px;
+            border: 2px solid var(--color-border);
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+
+        .research-card:hover {
+            border-color: var(--color-ocean-pink);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .research-card h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .research-card h4 i {
+            color: var(--color-ocean-pink);
+            font-size: 28px;
+        }
+
+        .research-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--color-text-light);
+        }
+
+        /* Callout Boxes - Ocean Pink */
         .callout-boxes {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 70px;
         }
 
         .callout-box {
             background: var(--color-white);
-            border-radius: 12px;
-            padding: 25px;
-            border: 2px solid var(--color-border);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border-radius: 18px;
+            padding: 40px 35px;
+            border: 3px solid var(--color-ocean-pink);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(255, 158, 207, 0.1);
+            text-align: center;
         }
 
         .callout-box:hover {
-            border-color: var(--color-ocean-pink);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 158, 207, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(255, 158, 207, 0.25);
+            background-color: rgba(255, 158, 207, 0.03);
         }
 
         .callout-box h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
+            font-size: 26px;
+            margin-bottom: 20px;
             color: var(--color-text);
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 15px;
         }
 
         .callout-box h3 i {
             color: var(--color-ocean-pink);
+            font-size: 32px;
         }
 
         .callout-box p {
-            font-size: 15px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--color-text-light);
+            line-height: 1.6;
         }
 
         .callout-box .btn {
@@ -286,27 +376,47 @@
             background: var(--color-ocean-pink);
             color: var(--color-white);
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
             transition: all 0.3s ease;
-            border: 2px solid var(--color-ocean-pink);
+            border: 3px solid var(--color-ocean-pink);
+            font-size: 17px;
+            letter-spacing: 0.3px;
         }
 
         .callout-box .btn:hover {
             background: var(--color-ocean-pink-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 158, 207, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 158, 207, 0.4);
         }
 
-        /* CV Tab Specific - Embed */
+        /* CV Tab */
+        .cv-tab-intro {
+            margin-bottom: 40px;
+        }
+
+        .cv-tab-intro h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        .cv-tab-intro p {
+            font-size: 20px;
+            color: var(--color-text-light);
+            max-width: 800px;
+        }
+
         .cv-embed-container {
             width: 100%;
-            height: calc(100vh - 140px);
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
+            height: calc(100vh - 200px);
+            border-radius: 16px;
             overflow: hidden;
             margin-top: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--color-border);
         }
 
         .cv-embed-container iframe {
@@ -315,27 +425,37 @@
             border: none;
         }
 
-        /* Music & Blog Tab Specific */
+        /* Blog & Music Tabs */
         .coming-soon {
             text-align: center;
-            padding: 60px 20px;
+            padding: 100px 20px;
         }
 
         .coming-soon i {
-            font-size: 60px;
+            font-size: 80px;
             color: var(--color-ocean-pink);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .coming-soon h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .coming-soon p {
+            font-size: 22px;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             body {
                 flex-direction: column;
+                font-size: 17px;
             }
 
             .sidebar {
@@ -344,7 +464,31 @@
                 height: auto;
                 border-right: none;
                 border-bottom: 1px solid var(--color-border);
-                padding: 30px 20px;
+                padding: 40px 30px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+            }
+
+            .profile-img-container {
+                margin-bottom: 0;
+            }
+
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .name-title {
+                flex: 1;
+                min-width: 300px;
+                text-align: left;
+            }
+
+            .sidebar-section {
+                width: auto;
+                min-width: 250px;
             }
 
             .main-content {
@@ -352,51 +496,93 @@
             }
 
             .header-tabs {
-                padding: 0 20px;
+                padding: 0 30px;
             }
 
             .tab-content {
-                padding: 30px 20px;
+                padding: 50px 40px;
             }
 
-            .callout-boxes {
-                grid-template-columns: 1fr;
+            .home-intro h2 {
+                font-size: 48px;
             }
         }
 
         @media (max-width: 768px) {
+            .sidebar {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .name-title {
+                text-align: center;
+                min-width: 100%;
+            }
+
             .nav-tabs {
+                justify-content: space-between;
                 overflow-x: auto;
                 white-space: nowrap;
-                padding-bottom: 5px;
+                padding-bottom: 10px;
             }
 
             .nav-tabs li {
-                margin-right: 5px;
+                margin-right: 25px;
             }
 
             .tab-link {
-                padding: 15px 18px;
-                font-size: 15px;
+                padding: 20px 0;
+                font-size: 17px;
             }
 
-            .profile-img {
-                width: 150px;
-                height: 150px;
+            .tab-content {
+                padding: 40px 25px;
             }
 
-            .name-title h1 {
-                font-size: 24px;
+            .home-intro h2 {
+                font-size: 40px;
             }
 
-            .tab-pane h2 {
-                font-size: 28px;
+            .about-section, .research-section {
+                padding: 35px 25px;
+                margin: 40px 0;
+            }
+
+            .about-section h3, .research-section h3 {
+                font-size: 32px;
+            }
+
+            .research-grid, .callout-boxes {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .coming-soon {
+                padding: 60px 20px;
+            }
+
+            .coming-soon h3 {
+                font-size: 36px;
+            }
+        }
+
+        /* Desktop-only About Me section */
+        @media (min-width: 1201px) {
+            .about-section {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .about-section {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Fixed Left Sidebar -->
+    <!-- Simplified Sidebar -->
     <aside class="sidebar">
         <div class="profile-img-container">
             <img src="https://github.com/mahimadas27/mahimadas27.github.io/blob/main/images/me.jpg?raw=true" 
@@ -405,53 +591,28 @@
         
         <div class="name-title">
             <h1>Mahima Das</h1>
-            <p>Psychological Researcher | MSc Psychology | Trauma & Well-being</p>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Research Focus</h3>
-            <ul class="interests-list">
-                <li>Psychological impacts of childhood trauma</li>
-                <li>Substance & illicit drug abuse</li>
-                <li>Moral injury, coercion & violence</li>
-                <li>Trauma-informed applications</li>
-                <li>Quantitative methods (SPSS, AMOS, R)</li>
-                <li>Assessment & intervention development</li>
-            </ul>
+            <p>Psychological Researcher | MSc Psychology | Specializing in Trauma & Well-being Research</p>
         </div>
 
         <div class="sidebar-section">
             <h3>Connect With Me</h3>
             <div class="contact-links">
                 <a href="https://www.linkedin.com/in/mahima-das-880876210/" class="contact-link linkedin" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
                 <a href="https://github.com/mahimadas27" class="contact-link github" target="_blank">
-                    <i class="fab fa-github"></i> GitHub Portfolio
+                    <i class="fab fa-github"></i> GitHub
                 </a>
                 <a href="https://topmate.io/mahima_das11" class="contact-link topmate" target="_blank">
-                    <i class="fas fa-calendar-check"></i> Book a Session on Topmate
-                </a>
-            </div>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Quick Links</h3>
-            <div class="contact-links">
-                <a href="https://raw.githubusercontent.com/mahimadas27/mahimadas27.github.io/97f705eee33c98c6139d50304f53333c7696bb4d/Mahima_Das_CV_A.pdf" 
-                   class="contact-link" target="_blank">
-                    <i class="fas fa-download"></i> Download Full CV (PDF)
-                </a>
-                <a href="mailto:dasmahima12270993@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> Send me an Email
+                    <i class="fas fa-calendar-check"></i> Topmate
                 </a>
             </div>
         </div>
     </aside>
 
-    <!-- Main Content with Tabs -->
+    <!-- Main Content -->
     <main class="main-content">
-        <!-- Header with Navigation Tabs -->
+        <!-- Spaced Out Header Tabs -->
         <header class="header-tabs">
             <ul class="nav-tabs">
                 <li><a href="#home" class="tab-link active" data-tab="home">Home</a></li>
@@ -461,33 +622,67 @@
             </ul>
         </header>
 
-        <!-- Tab Content Areas -->
+        <!-- Tab Content -->
         <div class="tab-content">
-            <!-- Home Tab -->
+            <!-- Home Tab with LARGE CONTENT -->
             <div id="home" class="tab-pane active">
-                <h2>Welcome to My Research Portfolio</h2>
-                
                 <div class="home-intro">
-                    <p>Hello! I'm Mahima Das, a psychological researcher specializing in the study of childhood trauma and its long-term impacts on emotional and behavioral outcomes. Currently pursuing my Masters in Research in Psychological Methods at the University of Sussex.</p>
-                    <p>My work employs quantitative methods to understand complex psychological phenomena, with a focus on developing trauma-informed interventions for marginalized populations. I'm passionate about making psychological research accessible and applicable to real-world challenges.</p>
+                    <h2>Researching the Psychology of Trauma & Resilience</h2>
+                    <p>I'm a psychological researcher focused on understanding the impacts of childhood trauma and developing evidence-based interventions for marginalized populations. My work bridges quantitative research methods with compassionate, trauma-informed applications.</p>
+                    <p>Currently pursuing my Masters in Research in Psychological Methods at the University of Sussex, I'm passionate about creating meaningful change through rigorous scientific inquiry and accessible psychological practice.</p>
                 </div>
 
+                <!-- About Me Section (Desktop focused) -->
+                <div class="about-section">
+                    <h3>About Me</h3>
+                    <p>My academic journey in psychology began at the University of Calcutta, where I developed a foundational understanding of human behavior and cognition. This evolved into specialized research in trauma psychology during my MSc at Bengaluru City University, where I graduated 3rd in my class with a CGPA of 8.98.</p>
+                    <p>Beyond academia, I've worked directly with affected populations as a caregiver, remedial educator, and trainee counsellor. These experiences ground my research in real-world applications and inform my commitment to creating interventions that are both scientifically rigorous and culturally sensitive.</p>
+                    <p>When I'm not conducting research, I'm involved in open science initiatives, academic mentoring, and exploring how music and creative expression can complement traditional therapeutic approaches.</p>
+                </div>
+
+                <!-- Research Focus Section (Moved from sidebar) -->
+                <div class="research-section">
+                    <h3>Research Focus & Expertise</h3>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4><i class="fas fa-brain"></i> Childhood Trauma</h4>
+                            <p>Investigating the psychological and neurological impacts of early adverse experiences on emotional regulation, behavioral outcomes, and long-term health trajectories.</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4><i class="fas fa-chart-line"></i> Quantitative Methods</h4>
+                            <p>Expertise in SPSS, AMOS, R, and JAMOVI for statistical analysis, scale development, structural equation modeling, and psychometric validation.</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4><i class="fas fa-heart"></i> Trauma-Informed Interventions</h4>
+                            <p>Developing and validating culturally sensitive assessment tools and therapeutic approaches for high-risk and marginalized populations.</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4><i class="fas fa-users"></i> Substance & Addiction Research</h4>
+                            <p>Exploring the psychological factors in substance abuse, with particular attention to trauma histories and co-occurring mental health conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ocean Pink Callout Boxes -->
                 <div class="callout-boxes">
                     <div class="callout-box">
-                        <h3><i class="fas fa-graduation-cap"></i> Academic Journey</h3>
-                        <p>Ranked 3rd in MSc Psychology at Bengaluru City University with a CGPA of 8.98. Currently expanding my methodological expertise at the University of Sussex.</p>
-                        <a href="#cv" class="tab-nav btn" data-tab="cv">View Full CV</a>
+                        <h3><i class="fas fa-university"></i> Academic Journey</h3>
+                        <p>Ranked 3rd in MSc Psychology at Bengaluru City University. Currently expanding methodological expertise at University of Sussex's THRIVE Lab.</p>
+                        <a href="#cv" class="tab-nav btn" data-tab="cv">View Full Academic Record</a>
                     </div>
 
                     <div class="callout-box">
-                        <h3><i class="fas fa-flask"></i> Research Projects</h3>
-                        <p>Contributing to meaningful research with Stanford University's Trauma Group, Mahindra University, and the THRIVE Lab at Sussex on AI/VR interventions.</p>
-                        <a href="#cv" class="tab-nav btn" data-tab="cv">See Research Experience</a>
+                        <h3><i class="fas fa-project-diagram"></i> Research Projects</h3>
+                        <p>Contributing to international research with Stanford, Hebrew University, Mahindra University, and Sussex on trauma, resilience, and innovative interventions.</p>
+                        <a href="#cv" class="tab-nav btn" data-tab="cv">Explore Research Experience</a>
                     </div>
 
                     <div class="callout-box">
-                        <h3><i class="fas fa-handshake"></i> Consultation</h3>
-                        <p>Available for research support, data analysis consultation, and academic mentoring through Topmate. Let's discuss how I can help with your project.</p>
+                        <h3><i class="fas fa-comments"></i> Consultation & Mentoring</h3>
+                        <p>Available for research design consultation, statistical analysis support, and academic mentoring through Topmate. Let's discuss your project needs.</p>
                         <a href="https://topmate.io/mahima_das11" class="btn" target="_blank">Book a Session</a>
                     </div>
                 </div>
@@ -495,8 +690,10 @@
 
             <!-- CV Tab -->
             <div id="cv" class="tab-pane">
-                <h2>Curriculum Vitae</h2>
-                <p>This is a live embed of my complete CV. You can also <a href="https://raw.githubusercontent.com/mahimadas27/mahimadas27.github.io/97f705eee33c98c6139d50304f53333c7696bb4d/Mahima_Das_CV_A.pdf" target="_blank">download the PDF version</a>.</p>
+                <div class="cv-tab-intro">
+                    <h2>Curriculum Vitae</h2>
+                    <p>Complete academic and professional record. This live embed shows my detailed CV. You can also <a href="https://raw.githubusercontent.com/mahimadas27/mahimadas27.github.io/97f705eee33c98c6139d50304f53333c7696bb4d/Mahima_Das_CV_A.pdf" target="_blank" style="color: var(--color-ocean-pink); font-weight: 600;">download the PDF version</a> for offline viewing.</p>
+                </div>
                 
                 <div class="cv-embed-container">
                     <iframe src="https://mahimadas27.github.io/CV/" 
@@ -509,10 +706,10 @@
             <!-- Blog Tab -->
             <div id="blog" class="tab-pane">
                 <div class="coming-soon">
-                    <i class="fas fa-pencil-alt"></i>
-                    <h3>Blog Coming Soon</h3>
-                    <p>I'm currently working on articles about psychological research methods, trauma-informed practice, and academic life. Check back later for updates!</p>
-                    <p>In the meantime, you can follow my work on <a href="https://github.com/mahimadas27" target="_blank">GitHub</a>.</p>
+                    <i class="fas fa-blog"></i>
+                    <h3>Academic Blog Coming Soon</h3>
+                    <p>I'm currently preparing articles on psychological research methods, trauma-informed practice, open science initiatives, and the intersection of mental health research with social justice.</p>
+                    <p>Follow my <a href="https://github.com/mahimadas27" target="_blank" style="color: var(--color-ocean-pink); font-weight: 600;">GitHub</a> for updates on projects and publications.</p>
                 </div>
             </div>
 
@@ -520,16 +717,16 @@
             <div id="music" class="tab-pane">
                 <div class="coming-soon">
                     <i class="fas fa-music"></i>
-                    <h3>Music & Creative Corner</h3>
-                    <p>This section will showcase my musical interests and creative pursuits outside of academia. Coming soon!</p>
-                    <p>Music has been an important part of my self-care routine and creative expression.</p>
+                    <h3>Music & Creative Expression</h3>
+                    <p>This section will explore the therapeutic role of music and creative arts in psychological well-being. Coming soon with reflections on music as self-care, creative process, and its integration with therapeutic practice.</p>
+                    <p>Music has been an essential component of my own resilience and creative expression throughout my academic journey.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
-        // Tab Switching Functionality
+        // Tab Switching with Animation
         document.addEventListener('DOMContentLoaded', function() {
             const tabLinks = document.querySelectorAll('.tab-link');
             const tabPanes = document.querySelectorAll('.tab-pane');
@@ -541,21 +738,34 @@
                     e.preventDefault();
                     const targetTab = this.getAttribute('data-tab');
                     
-                    // Update active tab
-                    tabLinks.forEach(tab => tab.classList.remove('active'));
+                    // Update active tab with animation
+                    tabLinks.forEach(tab => {
+                        tab.classList.remove('active');
+                        tab.style.transition = 'all 0.3s ease';
+                    });
                     this.classList.add('active');
                     
-                    // Show target tab content
+                    // Animate tab content
                     tabPanes.forEach(pane => {
+                        if (pane.classList.contains('active')) {
+                            pane.style.animation = 'fadeIn 0.6s ease';
+                        }
                         pane.classList.remove('active');
                         if (pane.id === targetTab) {
-                            pane.classList.add('active');
+                            setTimeout(() => {
+                                pane.classList.add('active');
+                            }, 50);
                         }
                     });
+                    
+                    // Scroll to top of content on mobile
+                    if (window.innerWidth <= 1200) {
+                        document.querySelector('.tab-content').scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
             
-            // Handle internal navigation links (like buttons that switch tabs)
+            // Handle internal navigation links
             tabNavLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     if (this.getAttribute('href').startsWith('#')) {
@@ -564,7 +774,10 @@
                         
                         // Update active tab
                         tabLinks.forEach(tab => tab.classList.remove('active'));
-                        document.querySelector(`.tab-link[data-tab="${targetTab}"]`).classList.add('active');
+                        const targetTabLink = document.querySelector(`.tab-link[data-tab="${targetTab}"]`);
+                        if (targetTabLink) {
+                            targetTabLink.classList.add('active');
+                        }
                         
                         // Show target tab content
                         tabPanes.forEach(pane => {
@@ -577,22 +790,29 @@
                 });
             });
             
-            // Simple function to handle smooth scrolling (not needed for tabs but good to have)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') return;
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId.startsWith('#') && targetId.length > 1) {
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
+            // Add hover effect to research cards on desktop
+            const researchCards = document.querySelectorAll('.research-card');
+            researchCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) {
+                        this.style.transform = 'translateY(-10px)';
                     }
                 });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (window.innerWidth > 768) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Auto-adjust iframe height on CV tab
+            window.addEventListener('resize', function() {
+                const cvIframe = document.querySelector('.cv-embed-container iframe');
+                if (cvIframe) {
+                    const container = cvIframe.parentElement;
+                    container.style.height = `calc(100vh - ${window.innerWidth <= 1200 ? '300px' : '200px'})`;
+                }
             });
         });
     </script>
