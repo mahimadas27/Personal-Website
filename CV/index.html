@@ -19,7 +19,7 @@
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
-}
+  }
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -27,12 +27,79 @@
   html {
     touch-action: manipulation;
   }
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  
+  /* Animated Name Styles */
+  .animated-name {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
     text-align: center;
+    background: linear-gradient(90deg, #333, #555, #777, #555, #333);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Download Button Styles */
+  .download-btn {
+    display: inline-block;
+    margin: 0 auto 30px auto;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #2c3e50, #4a5f7a, #2c3e50);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #34495e, #5b6f8a, #34495e);
+  }
+  
+  .download-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .download-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+  }
+  
+  .download-btn:hover::after {
+    left: 100%;
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
   .contact-line {
     font-size: 15px;
     color: #333;
@@ -71,12 +138,25 @@
     <a href="mailto:dasmahima12270993@gmail.com" style="display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; color:#333; margin-top:10px;">
       <span style="font-size:22px;">✉️</span> Email
     </a>
+    <a href="https://mahimadas27.github.io/" style="display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:600; color:#333; margin-top:10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" style="width:22px; height:22px;"> GitHub
+    </a>
   </div>
 </div>
 <div style="margin-left:350px;">
 
-<h1>Mahima Das</h1>
+<!-- Animated Name -->
+<h1 class="animated-name">Mahima Das</h1>
 
+<!-- Download CV Button -->
+<div class="btn-container">
+  <a href="https://raw.githubusercontent.com/mahimadas27/mahimadas27.github.io/97f705eee33c98c6139d50304f53333c7696bb4d/Mahima_Das_CV_A.pdf" 
+     class="download-btn" 
+     target="_blank"
+     download="Mahima_Das_CV.pdf">
+    Download CV
+  </a>
+</div>
 
 <div class="section-title"><span style="color:#6f6f6f; font-weight:900;"><span style="color:#4a4a4a;">S</span>KILLS</span></div>
 <ul>
@@ -104,14 +184,14 @@
 </div>
 <div class="entry"><span class="entry-title">Mahindra University — Research Assistant (Remote) (Jun–Sep 2025)</span>
 <ul>
-  <li>Worked on Black Swan funded project “Resilience in Structured Hardships.”</li>
+  <li>Worked on Black Swan funded project "Resilience in Structured Hardships."</li>
   <li>Wrote systematic review on hardship and gratitude</li>
   <li>Managed 28 participants for 30 days; collected and transcribed interviews</li>
   <li>Data analysis and manuscript preparation</li>
 </ul>
 </div>
 <div class="entry"><span class="entry-title">CHI for Trauma and Well-being — Research Assistant (Jun–Aug 2025)</span>
-<ul><li>Worked on “Illness Burden of Trauma.”</li></ul>
+<ul><li>Worked on "Illness Burden of Trauma."</li></ul>
 </div>
 <div class="entry"><span class="entry-title">Stanford University & Hebrew University — Trauma Group (2024–Present)</span>
 <ul>
@@ -139,7 +219,7 @@
   <li>Welfare checks, emergency response, documentation</li>
 </ul>
 </div>
-<div class="entry"><span class="entry-title">St. Anne’s Degree College — Lecturer & Administrative Officer (Sep 2024 – Mar 2025)</span>
+<div class="entry"><span class="entry-title">St. Anne's Degree College — Lecturer & Administrative Officer (Sep 2024 – Mar 2025)</span>
 <ul>
   <li>Taught Psychometry, Psychotherapy, Theoretical Perspectives, OB</li>
   <li>SPSS training; supervised scale development and dissertations</li>
@@ -195,9 +275,10 @@
 
 <div class="section-title"><span style="color:#6f6f6f; font-weight:900;"><span style="color:#4a4a4a;">G</span>UEST <span style="color:#4a4a4a;">L</span>ECTURES & <span style="color:#4a4a4a;">P</span>ANELS</span></div>
 <ul>
-  <li>Guest Lecturer — St. Anne’s: Motivation & Coping Strategies (2024)</li>
+  <li>Guest Lecturer — St. Anne's: Motivation & Coping Strategies (2024)</li>
   <li>Panel Moderator — IIPR: Psychology & Oncology (2024)</li>
 </ul>
 
+</div>
 </body>
 </html>
