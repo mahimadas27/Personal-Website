@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahima Das - Academic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Indigo Theme Colors */
+            --indigo-dark: #2c387e;
+            --indigo-primary: #3949ab;
+            --indigo-light: #7986cb;
+            --indigo-bg: #f8f9fa;
+            --white: #ffffff;
+            --gray-light: #f1f3f9;
+            --gray-medium: #e8eaf6;
+            --gray-dark: #5c6bc0;
+            --text-dark: #1a237e;
+            --text-medium: #303f9f;
+            --text-light: #5c6bc0;
+            --accent: #ff6f00;
+            --accent-light: #ffab40;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--indigo-bg);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: var(--white);
+            box-shadow: 0 5px 25px rgba(44, 56, 126, 0.08);
+            min-height: 100vh;
+        }
+        
+        /* Horizontal Header */
+        .main-header {
+            background: linear-gradient(135deg, var(--indigo-dark) 0%, var(--indigo-primary) 100%);
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-section h1 {
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-section .subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        
+        /* Horizontal Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 20px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .social-icons a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 80px);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background-color: var(--gray-light);
+            padding: 30px;
+            border-right: 1px solid var(--gray-medium);
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(44, 56, 126, 0.15);
+        }
+        
+        .profile-name {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .profile-title {
+            color: var(--text-medium);
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-medium);
+        }
+        
+        .contact-item i {
+            color: var(--indigo-primary);
+            width: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .section-title {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--indigo-light);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .skill-tag {
+            background-color: var(--white);
+            color: var(--text-medium);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--indigo-light);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--indigo-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content Area */
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+        
+        .page-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        .page-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--indigo-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .section-icon i {
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+        
+        .section-header h2 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .section-text {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--indigo-primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .cv-download:hover {
+            background-color: var(--white);
+            color: var(--indigo-primary);
+            border-color: var(--indigo-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(57, 73, 171, 0.2);
+        }
+        
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .blog-item {
+            background-color: var(--gray-light);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--indigo-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(44, 56, 126, 0.1);
+        }
+        
+        .blog-title {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .blog-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .music-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--gray-medium);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .music-card:hover {
+            border-color: var(--indigo-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(57, 73, 171, 0.15);
+        }
+        
+        .music-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--indigo-primary);
+            font-size: 1.5rem;
+        }
+        
+        .music-title {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .music-genre {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .highlight-box {
+            background-color: var(--gray-light);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+        
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .project-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--gray-medium);
+        }
+        
+        .project-title {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-title i {
+            color: var(--indigo-primary);
+        }
+        
+        footer {
+            background-color: var(--indigo-dark);
+            color: var(--white);
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+        
+        @media (max-width: 1100px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: space-between;
+            }
+            
+            .profile-section {
+                width: 100%;
+            }
+            
+            .contact-info, .skills-container {
+                flex: 1;
+                min-width: 250px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 20px 0;
+            }
+            
+            .logo-section {
+                margin-bottom: 20px;
+                text-align: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .social-icons {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .main-header, .content, .sidebar {
+                padding: 20px;
+            }
+            
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Horizontal Header -->
+        <header class="main-header">
+            <div class="header-container">
+                <div class="logo-section">
+                    <h1>Mahima Das</h1>
+                    <div class="subtitle">Academic Researcher & Developer</div>
+                </div>
+                
+                <div class="main-nav">
+                    <a href="#about" class="nav-link active">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#cv" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>CV</span>
+                    </a>
+                    <a href="#blogs" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blogs</span>
+                    </a>
+                    <a href="#music" class="nav-link">
+                        <i class="fas fa-music"></i>
+                        <span>Music</span>
+                    </a>
+                    <a href="#projects" class="nav-link">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                    
+                    <div class="social-icons">
+                        <a href="https://github.com/mahimadas27" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <img src="https://github.com/mahimadas27/Personal-Website/blob/main/images/me.jpg?raw=true" alt="Mahima Das" class="profile-img">
+                    <div class="profile-name">Mahima Das</div>
+                    <div class="profile-title">Researcher in Digital Humanities & HCI</div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 class="section-title">Contact Info</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@mahimadas.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Research University, City</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>mahimadas27.github.io</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="section-title">Research Interests</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">Human-Computer Interaction</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Digital Humanities</span>
+                        <span class="skill-tag">Qualitative Research</span>
+                        <span class="skill-tag">Academic Writing</span>
+                        <span class="skill-tag">Mixed Methods</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="section-title">Technical Skills</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="content">
+                <!-- About Section -->
+                <section id="about" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h2>About Me</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        I'm Mahima Das, an academic researcher passionate about the intersection of technology, 
+                        humanities, and creative expression. My work explores how digital tools can enhance 
+                        research methodologies and knowledge dissemination in the humanities and social sciences.
+                    </p>
+                    
+                    <p class="section-text">
+                        With a background in both technical and humanistic disciplines, I approach research 
+                        questions with a unique perspective that bridges quantitative analysis and qualitative 
+                        interpretation. I'm particularly interested in how visualization techniques can make 
+                        complex research findings more accessible and engaging.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <p>
+                            Currently investigating: How interactive data visualizations can enhance the 
+                            comprehension and engagement with qualitative research findings in academic publications.
+                        </p>
+                    </div>
+                    
+                    <p class="section-text">
+                        Outside of research, I'm an avid reader, occasional writer, and music enthusiast 
+                        who believes that diverse interests fuel creative academic work. I maintain several 
+                        open-source projects aimed at making research tools more accessible to academics 
+                        across disciplines.
+                    </p>
+                </section>
+                
+                <!-- CV Section -->
+                <section id="cv" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h2>Curriculum Vitae</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        My comprehensive academic CV details my educational background, research experience, 
+                        publications, presentations, teaching, and professional service. You can download 
+                        the complete document via the link below.
+                    </p>
+                    
+                    <a href="https://github.com/mahimadas27/Personal-Website/blob/main/Mahima_Das_CV_A.pdf" class="cv-download" target="_blank">
+                        <i class="fas fa-download"></i> Download Complete CV (PDF)
+                    </a>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 15px;">Academic Highlights</h3>
+                        <ul style="padding-left: 20px; color: #555;">
+                            <li style="margin-bottom: 10px;">
+                                <strong>PhD Candidate</strong> in Digital Humanities (Expected 2024)
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>4 peer-reviewed publications</strong> in international conferences and journals
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Research Excellence Award</strong> (2022) for innovative methodological contributions
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Guest Lecturer</strong> at 5 universities on digital research methods
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <strong>Conference Presentations</strong> at 8 international academic conferences
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Blogs Section -->
+                <section id="blogs" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h2>Blogs & Writing</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        I write about research methodologies, academic life, technology in humanities research, 
+                        and occasionally share reflections on the research process. Here are some of my recent writings:
+                    </p>
+                    
+                    <div class="blog-list">
+                        <div class="blog-item">
+                            <div class="blog-title">Beyond Bar Charts: Creative Data Visualization for Humanities Research</div>
+                            <div class="blog-date">Published: October 25, 2023</div>
+                            <p>Exploring how humanities researchers can move beyond traditional charts to create more engaging and insightful visual representations of their findings.</p>
+                        </div>
+                        
+                        <div class="blog-item">
+                            <div class="blog-title">The Researcher's Toolkit: Essential Open-Source Tools for Academic Work</div>
+                            <div class="blog-date">Published: September 12, 2023</div>
+                            <p>A curated list of free, open-source tools that can enhance productivity and collaboration in academic research across disciplines.</p>
+                        </div>
+                        
+                        <div class="blog-item">
+                            <div class="blog-title">Finding Flow: Productivity Techniques for Long-Term Research Projects</div>
+                            <div class="blog-date">Published: July 8, 2023</div>
+                            <p>Personal insights and strategies for maintaining momentum and motivation during extended research endeavors like PhD dissertations.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Music Section -->
+                <section id="music" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h2>Music & Research</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        Music is an integral part of my creative process. I'm interested in how different 
+                        auditory environments influence cognitive performance, creativity, and focus during 
+                        research activities.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <p>
+                            Research interest: Investigating the effects of different musical genres on 
+                            analytical thinking, creative insight, and sustained concentration in academic work.
+                        </p>
+                    </div>
+                    
+                    <div class="music-grid">
+                        <div class="music-card">
+                            <div class="music-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="music-title">Deep Focus</div>
+                            <div class="music-genre">Ambient, Classical</div>
+                        </div>
+                        
+                        <div class="music-card">
+                            <div class="music-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="music-title">Creative Thinking</div>
+                            <div class="music-genre">Jazz, Lo-fi Hip Hop</div>
+                        </div>
+                        
+                        <div class="music-card">
+                            <div class="music-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="music-title">Coding & Analysis</div>
+                            <div class="music-genre">Electronic, Post-rock</div>
+                        </div>
+                        
+                        <div class="music-card">
+                            <div class="music-icon">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <div class="music-title">Writing & Reflection</div>
+                            <div class="music-genre">Folk, Acoustic</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Projects Section -->
+                <section id="projects" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h2>Current Projects</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        I'm currently working on several research and development projects at the intersection 
+                        of digital tools and academic work:
+                    </p>
+                    
+                    <div class="project-list">
+                        <div class="project-item">
+                            <div class="project-title">
+                                <i class="fas fa-chart-bar"></i>
+                                Academic Visualization Toolkit
+                            </div>
+                            <p>An open-source library for creating accessible, publication-ready data visualizations specifically designed for academic use across disciplines.</p>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">
+                                <i class="fas fa-search"></i>
+                                Research Process Tracker
+                            </div>
+                            <p>A digital tool for documenting and analyzing the research workflow, helping researchers identify patterns and optimize their processes.</p>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-title">
+                                <i class="fas fa-music"></i>
+                                Music & Academic Productivity
+                            </div>
+                            <p>A longitudinal mixed-methods study exploring how different musical genres and listening habits affect various aspects of academic work.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Contact Section -->
+                <section id="contact" class="page-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h2>Contact</h2>
+                    </div>
+                    
+                    <p class="section-text">
+                        I'm always interested in connecting with fellow researchers, potential collaborators, 
+                        and anyone interested in the intersection of technology and humanities research.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <p>
+                            The best way to reach me is via email at <strong>contact@mahimadas.com</strong>. 
+                            I typically respond within 2-3 business days.
+                        </p>
+                    </div>
+                    
+                    <p class="section-text">
+                        You can also follow my work on GitHub and connect with me on social media using the 
+                        links in the header. For formal academic inquiries, please reference my CV.
+                    </p>
+                </section>
+            </main>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2023 Mahima Das. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://github.com/mahimadas27" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Twitter/X</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#cv">CV</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Calculate header height for offset
+                const headerHeight = document.querySelector('.main-header').offsetHeight;
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - headerHeight - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Update active nav link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const headerHeight = document.querySelector('.main-header').offsetHeight;
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 50;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Add animation to skill tags on hover
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Simple page load animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 150 * index);
+            });
+            
+            // Animate sidebar elements
+            const sidebarItems = document.querySelectorAll('.profile-section, .contact-info, .skills-container');
+            sidebarItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
